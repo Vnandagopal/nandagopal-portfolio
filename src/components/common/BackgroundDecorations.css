@@ -1,0 +1,151 @@
+
+/* =========================================
+   GLOBAL BACKGROUND LAYER
+========================================= */
+
+.global-background-decorations {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.background-blocks,
+.background-stickers {
+  position: absolute;
+  inset: 0;
+}
+
+/* =========================================
+   FLOATING BLOCKS
+========================================= */
+
+.floating-block {
+  position: absolute;
+  top: 0;
+  border-radius: 7px;
+
+  opacity: 0.34;
+
+  animation-name: backgroundRise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  will-change: transform;
+}
+
+.block-small {
+  width: 42px;
+  height: 18px;
+}
+
+.block-medium {
+  width: 65px;
+  height: 25px;
+}
+
+.block-large {
+  width: 88px;
+  height: 32px;
+}
+
+.block-peach {
+  background: #f3aa98;
+}
+
+.block-yellow {
+  background: #f0d99a;
+}
+
+.block-teal {
+  background: #91cbbb;
+}
+
+.block-grey {
+  background: #c2beb8;
+}
+
+/* =========================================
+   TECHNOLOGY STICKERS
+========================================= */
+
+.floating-sticker {
+  position: absolute;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-primary);
+  opacity: 0.27;
+
+  animation-name: stickerBackgroundRise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  will-change: transform;
+}
+
+/* =========================================
+   CONTINUOUS UPWARD MOVEMENT
+========================================= */
+
+@keyframes backgroundRise {
+  from {
+    transform: translateY(110vh) rotate(-10deg);
+  }
+
+  to {
+    transform: translateY(-120vh) rotate(12deg);
+  }
+}
+
+@keyframes stickerBackgroundRise {
+  from {
+    transform: translateY(110vh) rotate(var(--sticker-rotation));
+  }
+
+  to {
+    transform: translateY(-120vh)
+      rotate(calc(var(--sticker-rotation) + 15deg));
+  }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .floating-block {
+    opacity: 0.25;
+  }
+
+  .floating-sticker {
+    opacity: 0.19;
+  }
+
+  .floating-sticker svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .block-large {
+    width: 60px;
+    height: 23px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-block,
+  .floating-sticker {
+    animation: none;
+  }
+}

@@ -1,0 +1,248 @@
+
+.resume-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(15, 15, 15, 0.58);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  animation: resumeOverlayIn 0.3s ease forwards;
+}
+
+.resume-modal {
+  width: min(100%, 1050px);
+  height: min(88vh, 900px);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: var(--resume-modal-bg, #ffffff);
+  color: var(--resume-modal-text, #171717);
+
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-radius: 20px;
+
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.25);
+
+  animation: resumeModalIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)
+    forwards;
+}
+
+.resume-modal-header {
+  min-height: 82px;
+  padding: 16px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.resume-modal-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.resume-modal-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: #fd550a;
+  color: white;
+}
+
+.resume-modal-heading h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.resume-modal-heading h2 span {
+  color: #fd550a;
+}
+
+.resume-modal-heading p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+.resume-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.resume-download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 11px 16px;
+
+  border-radius: 30px;
+  background: #fd550a;
+  color: white;
+
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.resume-download-button:hover {
+  background: #e84900;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(253, 85, 10, 0.25);
+}
+
+.resume-open-button,
+.resume-close-button {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 50%;
+
+  color: inherit;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.resume-open-button:hover,
+.resume-close-button:hover {
+  background: rgba(128, 128, 128, 0.12);
+  transform: rotate(5deg);
+}
+
+.resume-pdf-container {
+  flex: 1;
+  min-height: 0;
+  background: #e8e8e8;
+}
+
+.resume-pdf-viewer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.resume-modal-footer {
+  min-height: 42px;
+  padding: 10px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* Animations */
+
+@keyframes resumeOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes resumeModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Dark theme */
+
+[data-theme="dark"] .resume-modal {
+  --resume-modal-bg: #202020;
+  --resume-modal-text: #f5f5f5;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .resume-modal-overlay {
+    padding: 10px;
+  }
+
+  .resume-modal {
+    height: 92vh;
+    border-radius: 14px;
+  }
+
+  .resume-modal-header {
+    padding: 12px;
+    flex-wrap: wrap;
+  }
+
+  .resume-modal-heading h2 {
+    font-size: 16px;
+  }
+
+  .resume-modal-actions {
+    gap: 6px;
+  }
+
+  .resume-download-button {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .resume-open-button,
+  .resume-close-button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .resume-modal-footer {
+    padding: 9px 12px;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,103 @@
+
+/* =========================================
+   LIGHT THEME — DEFAULT
+========================================= */
+
+:root {
+  color-scheme: light;
+
+  --color-background: #FAF6F3;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #FFF8F4;
+
+  --color-heading: #252321;
+  --color-text: #514943;
+  --color-muted: #887D76;
+
+  --color-primary: #E94B27;
+  --color-primary-hover: #C83C1D;
+  --color-secondary: #087E78;
+  --color-accent: #F5D9CC;
+
+  --color-border: #EEDFD7;
+  --color-soft: #F8E9E2;
+
+  --color-success: #20B77A;
+
+  /* Compatibility with existing components */
+  --color-orange: var(--color-background);
+  --color-green: var(--color-secondary);
+  --color-yellow: #F5D9CC;
+  --color-cream: var(--color-surface-soft);
+  --color-black: var(--color-heading);
+  --color-white: var(--color-surface);
+
+  /* Typography */
+  --font-body: "Space Grotesk", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+
+  /* Shape */
+  --radius-small: 9px;
+  --radius-medium: 16px;
+  --radius-large: 22px;
+
+  /* Shadows */
+  --shadow-card: 0 5px 20px rgba(64, 43, 32, 0.045);
+  --shadow-hover: 0 10px 25px rgba(64, 43, 32, 0.10);
+
+  /* Motion */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+
+  /* Background decorations */
+  --decoration-opacity: 0.35;
+  --sticker-opacity: 0.09;
+  --sticker-hover-opacity: 0.17;
+
+  --color-text-muted: var(--color-muted);
+}
+
+/* =========================================
+   DARK THEME — PURPLE / LAVENDER
+========================================= */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-background: #130F1A;
+  --color-surface: #1C1729;
+  --color-surface-soft: #241D35;
+
+  --color-heading: #F2EDF9;
+  --color-text: #D0C7DC;
+  --color-muted: #AAA0BA;
+
+  --color-primary: #C189FD;
+  --color-primary-hover: #D0A1FF;
+  --color-secondary: #FF60A1;
+  --color-accent: #352644;
+
+  --color-border: #352A49;
+  --color-soft: #2A2143;
+
+  --color-success: #28C99A;
+
+  /* Compatibility with existing components */
+  --color-orange: var(--color-background);
+  --color-green: var(--color-secondary);
+  --color-yellow: #C189FD;
+  --color-cream: var(--color-surface-soft);
+  --color-black: var(--color-heading);
+  --color-white: var(--color-surface);
+
+  /* Background decorations */
+  --decoration-opacity: 0.65;
+  --sticker-opacity: 0.20;
+  --sticker-hover-opacity: 0.30;
+
+  /* Shadows */
+  --shadow-card: 0 5px 25px rgba(0, 0, 0, 0.18);
+  --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.28);
+
+  --color-text-muted: var(--color-muted);
+}

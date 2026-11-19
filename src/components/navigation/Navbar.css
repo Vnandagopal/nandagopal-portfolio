@@ -1,0 +1,488 @@
+
+/* =========================================
+   FULL-WIDTH NAVBAR
+========================================= */
+
+.main-navbar {
+  width: 100%;
+  min-height: 76px;
+  margin: 0;
+  padding: 12px clamp(24px, 5.5vw, 80px);
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: var(--color-heading);
+  text-decoration: none;
+
+  font-size: 19px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.navbar-brand svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 15px;
+  border-radius: 8px;
+
+  color: var(--color-text);
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: var(--color-primary);
+  background: var(--color-soft);
+}
+
+.nav-item:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   THEME TOGGLE BUTTON
+========================================= */
+
+.navbar-theme-button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+  padding: 0;
+
+  color: var(--color-heading);
+  background: var(--color-surface-soft);
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  outline: none;
+  box-shadow: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.navbar-theme-button:hover {
+  color: var(--color-primary);
+  background: var(--color-soft);
+  border-color: var(--color-primary);
+  transform: rotate(-12deg);
+}
+
+.navbar-theme-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Accessible keyboard focus */
+.navbar-theme-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.theme-palette-icon {
+  transition: transform 0.3s ease;
+}
+
+.navbar-theme-button:hover .theme-palette-icon {
+  transform: scale(1.1);
+}
+
+.theme-state-icon {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+
+  padding: 2px;
+
+  color: var(--color-primary);
+  background: var(--color-surface);
+  border-radius: 50%;
+}
+
+/* =========================================
+   NAVBAR ACTIONS
+========================================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   SHARED RESUME AND HIRE ME BUTTON STYLES
+========================================= */
+
+.navbar-actions .navbar-resume-button,
+.navbar-actions .navbar-hire-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  height: 44px;
+  padding: 0 18px;
+
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* =========================================
+   RESUME DOWNLOAD BUTTON
+   SECONDARY ACTION
+========================================= */
+
+.navbar-actions .navbar-resume-button {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+
+.navbar-actions .navbar-resume-button:hover {
+  background: var(--color-soft);
+  color: var(--color-primary-hover);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.navbar-resume-button svg {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.navbar-resume-button:hover svg {
+  transform: translateY(-2px);
+}
+
+/* Dark theme contrast */
+[data-theme="dark"] .navbar-actions .navbar-resume-button {
+  color: var(--color-heading);
+}
+
+[data-theme="dark"] .navbar-actions .navbar-resume-button:hover {
+  color: var(--color-primary);
+}
+
+/* =========================================
+   HIRE ME BUTTON
+   PRIMARY ACTION
+========================================= */
+
+.navbar-actions .navbar-hire-button {
+  background: var(--color-primary);
+  color: #ffffff;
+  border: 1px solid var(--color-primary);
+}
+
+.navbar-actions .navbar-hire-button:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .main-navbar {
+    padding: 12px 24px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navbar-links {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .nav-item {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .navbar-brand {
+    font-size: 16px;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  .navbar-actions .navbar-resume-button,
+  .navbar-actions .navbar-hire-button {
+    padding: 0 13px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .main-navbar *,
+  .main-navbar *::before,
+  .main-navbar *::after {
+    transition: none !important;
+  }
+}
+
+/* =========================================
+   CLEAN & COMPACT MOBILE NAVBAR
+========================================= */
+
+@media (max-width: 600px) {
+
+  .main-navbar {
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    grid-template-areas:
+      "brand theme"
+      "actions actions"
+      "links links";
+
+    align-items: center;
+
+    gap: 7px 10px;
+
+    min-height: auto;
+    padding: 9px 14px;
+  }
+
+  /* Brand */
+
+  .navbar-brand {
+    grid-area: brand;
+
+    gap: 6px;
+    font-size: 15px;
+  }
+
+  .navbar-brand svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Theme toggle */
+
+  .navbar-theme-button {
+    grid-area: theme;
+    justify-self: end;
+
+    width: 34px;
+    height: 34px;
+  }
+
+  .theme-palette-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .theme-state-icon {
+    width: 11px;
+    height: 11px;
+
+    right: 3px;
+    bottom: 3px;
+  }
+
+  /* Resume and Hire Me */
+
+  .navbar-actions {
+    grid-area: actions;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 7px;
+    width: 100%;
+  }
+
+  .navbar-actions .navbar-resume-button,
+  .navbar-actions .navbar-hire-button {
+    height: 32px;
+    padding: 0 11px;
+    gap: 5px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    border-radius: 6px;
+  }
+
+  .navbar-actions .navbar-resume-button svg,
+  .navbar-actions .navbar-hire-button svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  /* Navigation */
+
+  .navbar-links {
+    grid-area: links;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    min-width: 0;
+
+    gap: 3px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 0 0 2px;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .navbar-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item {
+    flex-shrink: 0;
+
+    padding: 6px 9px;
+    border-radius: 5px;
+
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .nav-item:hover {
+    transform: none;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL SCREENS
+========================================= */
+
+@media (max-width: 380px) {
+
+  .main-navbar {
+    padding: 8px 11px;
+    gap: 6px 8px;
+  }
+
+  .navbar-brand {
+    font-size: 14px;
+  }
+
+  .navbar-actions {
+    gap: 6px;
+  }
+
+  .navbar-actions .navbar-resume-button,
+  .navbar-actions .navbar-hire-button {
+    height: 30px;
+    padding: 0 9px;
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .navbar-actions .navbar-resume-button svg,
+  .navbar-actions .navbar-hire-button svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .nav-item {
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+}

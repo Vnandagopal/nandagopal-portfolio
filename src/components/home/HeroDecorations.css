@@ -1,0 +1,478 @@
+
+/* =========================================
+   BACKGROUND DECORATION LAYER
+========================================= */
+
+.hero-decorations {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================
+   FLOATING ABSTRACT BLOCKS
+========================================= */
+
+.floating-shape {
+  position: absolute;
+  z-index: 0;
+
+  border-radius: 8px;
+  pointer-events: none;
+
+  opacity: 0;
+  animation: backgroundFloatUp linear infinite;
+}
+
+/* Peach */
+.shape-one {
+  width: 85px;
+  height: 25px;
+  left: 5%;
+  bottom: -50px;
+  background: #F4CFC2;
+  animation-duration: 19s;
+  animation-delay: -2s;
+}
+
+/* Soft green */
+.shape-two {
+  width: 55px;
+  height: 22px;
+  left: 18%;
+  bottom: -60px;
+  background: #D5E9E0;
+  animation-duration: 23s;
+  animation-delay: -8s;
+}
+
+/* Pale orange */
+.shape-three {
+  width: 75px;
+  height: 28px;
+  left: 32%;
+  bottom: -50px;
+  background: #F8DCD1;
+  animation-duration: 21s;
+  animation-delay: -12s;
+}
+
+/* Muted cream */
+.shape-four {
+  width: 60px;
+  height: 24px;
+  left: 47%;
+  bottom: -60px;
+  background: #F4E6C9;
+  animation-duration: 25s;
+  animation-delay: -5s;
+}
+
+/* Outline block */
+.shape-five {
+  width: 45px;
+  height: 45px;
+  left: 58%;
+  bottom: -60px;
+  border: 1px solid var(--color-primary);
+  background: transparent;
+  border-radius: 13px;
+  animation-duration: 22s;
+  animation-delay: -15s;
+}
+
+/* Pale green */
+.shape-six {
+  width: 70px;
+  height: 22px;
+  left: 70%;
+  bottom: -50px;
+  background: #D5E9E0;
+  animation-duration: 20s;
+  animation-delay: -4s;
+}
+
+/* Pale peach */
+.shape-seven {
+  width: 45px;
+  height: 45px;
+  left: 82%;
+  bottom: -60px;
+  background: #F4CFC2;
+  border-radius: 12px;
+  animation-duration: 26s;
+  animation-delay: -10s;
+}
+
+/* Cream */
+.shape-eight {
+  width: 90px;
+  height: 25px;
+  right: 2%;
+  bottom: -50px;
+  background: #F4E6C9;
+  animation-duration: 24s;
+  animation-delay: -17s;
+}
+
+/* Additional smaller blocks */
+.shape-nine {
+  width: 38px;
+  height: 38px;
+  left: 12%;
+  bottom: -60px;
+  background: #E6DAD4;
+  border-radius: 10px;
+  animation-duration: 28s;
+  animation-delay: -6s;
+}
+
+.shape-ten {
+  width: 100px;
+  height: 25px;
+  left: 25%;
+  bottom: -50px;
+  background: #F4CFC2;
+  animation-duration: 22s;
+  animation-delay: -19s;
+}
+
+.shape-eleven {
+  width: 48px;
+  height: 48px;
+  left: 40%;
+  bottom: -60px;
+  border: 1px solid #D5E9E0;
+  border-radius: 12px;
+  animation-duration: 27s;
+  animation-delay: -11s;
+}
+
+.shape-twelve {
+  width: 80px;
+  height: 24px;
+  left: 55%;
+  bottom: -50px;
+  background: #D5E9E0;
+  animation-duration: 20s;
+  animation-delay: -14s;
+}
+
+.shape-thirteen {
+  width: 58px;
+  height: 25px;
+  left: 66%;
+  bottom: -50px;
+  background: #F8DCD1;
+  animation-duration: 25s;
+  animation-delay: -7s;
+}
+
+.shape-fourteen {
+  width: 42px;
+  height: 42px;
+  left: 76%;
+  bottom: -60px;
+  background: #F4E6C9;
+  border-radius: 11px;
+  animation-duration: 23s;
+  animation-delay: -16s;
+}
+
+.shape-fifteen {
+  width: 95px;
+  height: 25px;
+  left: 88%;
+  bottom: -50px;
+  background: #D5E9E0;
+  animation-duration: 29s;
+  animation-delay: -9s;
+}
+
+.shape-sixteen {
+  width: 50px;
+  height: 22px;
+  left: 92%;
+  bottom: -50px;
+  background: #F4CFC2;
+  animation-duration: 21s;
+  animation-delay: -13s;
+}
+
+/* Continuous upward movement */
+
+@keyframes backgroundFloatUp {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+  }
+
+  12% {
+    opacity: var(--decoration-opacity, 0.35);
+  }
+
+  75% {
+    opacity: var(--decoration-opacity, 0.35);
+  }
+
+  100% {
+    translate: 25px -900px;
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   TECHNOLOGY STICKERS
+========================================= */
+
+.hero-sticker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  color: var(--color-primary);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  opacity: var(--sticker-opacity, 0.09);
+  pointer-events: auto;
+
+  animation: stickerDriftUp linear infinite;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hero-sticker span {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.hero-sticker:hover {
+  opacity: var(--sticker-hover-opacity, 0.17);
+  animation-play-state: paused;
+}
+
+/* Individual positions and movement speeds */
+
+.sticker-code {
+  top: 37%;
+  left: 5%;
+  transform: rotate(-12deg);
+  animation-duration: 22s;
+  animation-delay: -2s;
+}
+
+.sticker-react {
+  top: 17%;
+  left: 25%;
+  flex-direction: column;
+  transform: rotate(10deg);
+  animation-duration: 27s;
+  animation-delay: -8s;
+}
+
+.sticker-database {
+  top: 22%;
+  right: 9%;
+  flex-direction: column;
+  animation-duration: 24s;
+  animation-delay: -12s;
+}
+
+.sticker-git {
+  top: 48%;
+  right: 5%;
+  transform: rotate(12deg);
+  animation-duration: 29s;
+  animation-delay: -5s;
+}
+
+.sticker-terminal {
+  left: 12%;
+  bottom: 10%;
+  transform: rotate(-8deg);
+  animation-duration: 25s;
+  animation-delay: -16s;
+}
+
+.sticker-security {
+  right: 8%;
+  bottom: 12%;
+  animation-duration: 30s;
+  animation-delay: -10s;
+}
+
+.sticker-cpu {
+  right: 29%;
+  bottom: 8%;
+  animation-duration: 26s;
+  animation-delay: -4s;
+}
+
+.sticker-sports {
+  top: 16%;
+  right: 28%;
+  transform: rotate(-9deg);
+  animation-duration: 28s;
+  animation-delay: -15s;
+}
+
+.sticker-cooking {
+  left: 29%;
+  bottom: 13%;
+  animation-duration: 23s;
+  animation-delay: -7s;
+}
+
+.sticker-travel {
+  right: 8%;
+  top: 72%;
+  transform: rotate(-10deg);
+  animation-duration: 31s;
+  animation-delay: -18s;
+}
+
+.sticker-airbnb {
+  left: 4%;
+  top: 20%;
+  flex-direction: column;
+  animation-duration: 27s;
+  animation-delay: -11s;
+}
+
+/* Sticker upward movement */
+
+@keyframes stickerDriftUp {
+  0% {
+    translate: 0 80px;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: var(--sticker-opacity, 0.09);
+  }
+
+  80% {
+    opacity: var(--sticker-opacity, 0.09);
+  }
+
+  100% {
+    translate: 0 -180px;
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   SPARKLES AND LINE ART
+========================================= */
+
+.hero-sparkle {
+  position: absolute;
+  color: var(--color-primary);
+  opacity: var(--sticker-opacity, 0.09);
+}
+
+.sparkle-one {
+  left: 21%;
+  bottom: 24%;
+}
+
+.sparkle-two {
+  right: 17%;
+  top: 35%;
+}
+
+.hero-line-art {
+  position: absolute;
+  stroke: var(--color-primary);
+  stroke-width: 2;
+  opacity: var(--decoration-opacity, 0.35);
+}
+
+.hero-line-top {
+  top: 0;
+  left: 0;
+  width: 150px;
+}
+
+.hero-line-bottom {
+  bottom: 0;
+  right: 0;
+  width: 180px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  .sticker-sports,
+  .sticker-cooking,
+  .sticker-travel {
+    display: none;
+  }
+
+  .sticker-code {
+    top: 12%;
+    left: 3%;
+  }
+
+  .sticker-react {
+    top: 12%;
+    left: auto;
+    right: 4%;
+  }
+
+  .sticker-database {
+    top: auto;
+    bottom: 17%;
+    right: 4%;
+  }
+
+  .sticker-git,
+  .sticker-security,
+  .sticker-cpu {
+    display: none;
+  }
+
+  .sticker-terminal {
+    bottom: 12%;
+    left: 3%;
+  }
+
+  .hero-line-top {
+    width: 100px;
+  }
+
+  .hero-line-bottom {
+    width: 120px;
+  }
+
+  .floating-shape {
+    animation-duration: 26s;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sticker,
+  .floating-shape {
+    animation: none;
+    opacity: 0.08;
+  }
+
+  .hero-sticker {
+    transition: none;
+  }
+}

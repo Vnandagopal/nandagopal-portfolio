@@ -1,0 +1,184 @@
+
+.projects-section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 100px 7% 110px;
+  background: transparent;
+}
+
+.projects-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Heading */
+
+.projects-heading {
+  max-width: 650px;
+  margin-bottom: 50px;
+}
+
+.projects-heading .section-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.projects-heading h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+}
+
+.projects-heading h2 span {
+  color: var(--color-primary);
+}
+
+.projects-heading p {
+  max-width: 500px;
+  margin-top: 14px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Project grid */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 27px;
+  align-items: start;
+}
+
+/* Future projects note */
+
+.projects-future-note {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+
+  margin-top: 35px;
+  padding: 22px 25px;
+
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px dashed rgba(253, 85, 10, 0.28);
+  border-radius: 13px;
+}
+
+.projects-future-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 39px;
+  height: 39px;
+
+  color: var(--color-primary);
+  background: #fff0e5;
+  border-radius: 10px;
+
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.projects-future-note > div:nth-child(2) {
+  flex: 1;
+}
+
+.projects-future-note h3 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.projects-future-note p {
+  margin: 5px 0 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.projects-future-label {
+  color: var(--color-primary);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .projects-grid {
+    gap: 18px;
+  }
+
+  .projects-section {
+    padding: 80px 5% 90px;
+  }
+}
+
+@media (max-width: 650px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .projects-heading {
+    margin-bottom: 35px;
+  }
+
+  .projects-future-note {
+    align-items: flex-start;
+    padding: 19px;
+  }
+
+  .projects-future-label {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+}
+/* =========================================
+   DARK THEME
+========================================= */
+
+[data-theme="dark"] .projects-heading h2 {
+  color: var(--color-heading);
+}
+
+[data-theme="dark"] .projects-heading p {
+  color: var(--color-muted);
+}
+
+[data-theme="dark"] .projects-future-note {
+  background: rgba(36, 29, 53, 0.88);
+  border-color: rgba(193, 137, 253, 0.35);
+}
+
+[data-theme="dark"] .projects-future-icon {
+  color: var(--color-primary);
+  background: #38264D;
+}
+
+[data-theme="dark"] .projects-future-note h3 {
+  color: var(--color-heading);
+}
+
+[data-theme="dark"] .projects-future-note p {
+  color: var(--color-muted);
+}

@@ -1,0 +1,28 @@
+
+.announcement-bar {
+  min-height: 30px;
+  background: var(--color-background);
+  color: var(--color-muted);
+  border-bottom: 1px solid var(--color-border);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  padding: 6px 35px;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+.announcement-bar p {
+  margin: 0;
+}
+
+.announcement-close {
+  position: absolute;
+  right: 18px;
+  color: var(--color-muted);
+  cursor: pointer;
+}

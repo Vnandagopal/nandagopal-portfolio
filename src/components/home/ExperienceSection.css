@@ -1,0 +1,628 @@
+
+.experience-section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 100px 7% 110px;
+  background: transparent;
+}
+
+.experience-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.experience-heading {
+  max-width: 620px;
+  margin-bottom: 55px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.experience-heading h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1.8px;
+}
+
+.experience-heading h2 span {
+  color: var(--color-primary);
+}
+
+.experience-heading > p {
+  margin-top: 14px;
+  color: var(--color-text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Timeline */
+
+.experience-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  bottom: 45px;
+  left: 21px;
+  width: 1px;
+  border-left: 2px dashed var(--color-border);
+}
+
+.experience-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 22px;
+}
+
+.experience-marker {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.experience-marker-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--color-primary);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+}
+
+.experience-card {
+  min-width: 0;
+  padding: 27px 30px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(23, 23, 23, 0.035);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(23, 23, 23, 0.07);
+}
+
+.experience-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 13px;
+}
+
+.experience-type {
+  color: var(--color-primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.experience-period {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.experience-card h3 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+}
+
+.experience-company {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 5px;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.current-role-dot {
+  width: 7px;
+  height: 7px;
+  background: #36a875;
+  border-radius: 50%;
+}
+
+.experience-description {
+  max-width: 760px;
+  margin: 16px 0 22px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* Products */
+
+.experience-products {
+  margin-bottom: 23px;
+}
+
+.experience-products h4,
+.experience-contributions h4 {
+  margin: 0 0 12px;
+  color: var(--color-text);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.experience-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.experience-product {
+  padding: 15px;
+  background: rgba(245, 242, 237, 0.7);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.experience-product-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-primary);
+}
+
+.experience-product-heading strong {
+  flex: 1;
+  color: var(--color-text);
+  font-size: 13px;
+}
+
+.experience-product p {
+  margin: 8px 0 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Contributions */
+
+.experience-contributions {
+  margin-bottom: 21px;
+}
+
+.experience-contribution-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
+}
+
+.experience-contribution {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.experience-contribution > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-primary);
+}
+
+.experience-contribution strong {
+  display: block;
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.experience-contribution p {
+  margin: 4px 0 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.experience-contributions ul {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.experience-contributions li {
+  padding-left: 3px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Technology tags */
+
+.experience-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 17px;
+  border-top: 1px solid var(--color-border);
+}
+
+.experience-technologies span {
+  padding: 6px 10px;
+  color: var(--color-text-muted);
+  background: rgba(245, 242, 237, 0.8);
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Internship stays compact */
+
+.internship-experience .experience-card {
+  padding: 23px 30px;
+}
+
+.internship-experience .experience-description {
+  margin-bottom: 16px;
+}
+
+.internship-experience .experience-contributions {
+  margin-bottom: 17px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 75px 5% 85px;
+  }
+
+  .experience-heading {
+    margin-bottom: 38px;
+  }
+
+  .experience-entry {
+    grid-template-columns: 35px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .experience-timeline::before {
+    left: 17px;
+  }
+
+  .experience-marker-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .experience-card,
+  .internship-experience .experience-card {
+    padding: 21px 18px;
+  }
+
+  .experience-card h3 {
+    font-size: 21px;
+  }
+
+  .experience-product-grid,
+  .experience-contribution-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+
+  .experience-entry {
+    gap: 9px;
+    grid-template-columns: 30px minmax(0, 1fr);
+  }
+
+  .experience-timeline::before {
+    left: 14px;
+  }
+
+  .experience-marker-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .experience-marker-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .experience-card,
+  .internship-experience .experience-card {
+    padding: 18px 14px;
+  }
+
+  .experience-card-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .experience-card h3 {
+    font-size: 19px;
+  }
+
+  .experience-description {
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   DARK THEME — PROJECT CARDS
+========================================= */
+
+[data-theme="dark"] .project-card {
+  background: #1C1729;
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="dark"] .project-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Keep product previews visually distinct */
+[data-theme="dark"] .project-preview-fortress {
+  background: #211A30;
+}
+
+[data-theme="dark"] .project-preview-compass {
+  background: #1D2928;
+}
+
+/* Project card content */
+[data-theme="dark"] .project-category {
+  color: #D9A8FF;
+  background: #38264D;
+}
+
+[data-theme="dark"] .project-number {
+  color: #9A8BAA;
+}
+
+[data-theme="dark"] .project-card-content h3 {
+  color: var(--color-heading);
+}
+
+[data-theme="dark"] .project-card-content h4 {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .project-card-content > p {
+  color: var(--color-muted);
+}
+
+[data-theme="dark"] .project-technologies span {
+  color: #D0C7DC;
+  background: #2A203B;
+  border: 1px solid #403052;
+}
+
+[data-theme="dark"] .project-details-button {
+  color: var(--color-primary);
+}
+
+/* =========================================
+   DARK THEME — PROJECT DETAILS MODAL
+========================================= */
+
+[data-theme="dark"] .project-details-overlay {
+  background: rgba(8, 6, 13, 0.82);
+}
+
+[data-theme="dark"] .project-details-modal {
+  background: #1C1729;
+  border-color: #403052;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.48);
+}
+
+[data-theme="dark"] .project-details-close {
+  color: var(--color-heading);
+  background: #2A203B;
+  border-color: #403052;
+}
+
+[data-theme="dark"] .project-details-close:hover {
+  background: #38264D;
+}
+
+/* Modal header */
+[data-theme="dark"] .project-details-header {
+  border-bottom-color: var(--color-border);
+}
+
+[data-theme="dark"] .project-details-header h2 {
+  color: var(--color-heading);
+}
+
+[data-theme="dark"] .project-details-header p {
+  color: var(--color-muted);
+}
+
+/* Modal detail sections */
+[data-theme="dark"] .project-details-section-heading h4 {
+  color: var(--color-heading);
+}
+
+/* Modules */
+[data-theme="dark"] .project-module {
+  background: #2A203B;
+  border-color: #403052;
+}
+
+[data-theme="dark"] .project-module h5 {
+  color: var(--color-heading);
+}
+
+[data-theme="dark"] .project-module p {
+  color: var(--color-muted);
+}
+
+/* Contributions */
+[data-theme="dark"] .project-contributions li {
+  color: #D0C7DC;
+}
+
+/* Architecture */
+[data-theme="dark"] .project-architecture {
+  color: #D0C7DC;
+  background: #171321;
+  border: 1px solid #403052;
+}
+
+/* Technology stack */
+[data-theme="dark"] .project-details-technologies span {
+  color: #D0C7DC;
+  background: #2A203B;
+  border-color: #403052;
+}
+
+/* Footer */
+[data-theme="dark"] .project-details-footer {
+  color: var(--color-muted);
+  border-top-color: var(--color-border);
+}
+
+/* =========================================
+   DARK THEME — EXPERIENCE SECTION
+========================================= */
+
+[data-theme="dark"] .experience-heading h2 {
+  color: var(--color-heading);
+}
+
+[data-theme="dark"] .experience-heading > p {
+  color: var(--color-muted);
+}
+
+/* Timeline */
+[data-theme="dark"] .experience-timeline::before {
+  border-left-color: #493858;
+}
+
+[data-theme="dark"] .experience-marker-icon {
+  color: var(--color-primary);
+  background: #1C1729;
+  border-color: #493858;
+}
+
+/* Experience cards */
+[data-theme="dark"] .experience-card {
+  background: #1C1729;
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="dark"] .experience-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+[data-theme="dark"] .experience-type {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .experience-period {
+  color: var(--color-muted);
+}
+
+[data-theme="dark"] .experience-card h3 {
+  color: var(--color-heading);
+}
+
+[data-theme="dark"] .experience-company {
+  color: #D9A8FF;
+}
+
+[data-theme="dark"] .current-role-dot {
+  background: var(--color-success);
+}
+
+[data-theme="dark"] .experience-description {
+  color: var(--color-muted);
+}
+
+/* Products */
+[data-theme="dark"] .experience-products h4,
+[data-theme="dark"] .experience-contributions h4 {
+  color: #BFAED0;
+}
+
+[data-theme="dark"] .experience-product {
+  background: #251D34;
+  border-color: #403052;
+}
+
+[data-theme="dark"] .experience-product-heading {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .experience-product-heading strong {
+  color: var(--color-heading);
+}
+
+[data-theme="dark"] .experience-product p {
+  color: var(--color-muted);
+}
+
+/* Contributions */
+[data-theme="dark"] .experience-contribution > svg {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .experience-contribution strong {
+  color: var(--color-heading);
+}
+
+[data-theme="dark"] .experience-contribution p,
+[data-theme="dark"] .experience-contributions li {
+  color: var(--color-muted);
+}
+
+[data-theme="dark"] .experience-contributions li::marker {
+  color: var(--color-primary);
+}
+
+/* Technology tags */
+[data-theme="dark"] .experience-technologies {
+  border-top-color: var(--color-border);
+}
+
+[data-theme="dark"] .experience-technologies span {
+  color: #D0C7DC;
+  background: #2A203B;
+  border-color: #403052;
+}

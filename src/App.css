@@ -1,0 +1,90 @@
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.portfolio-app {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--color-background);
+}
+
+/* Global animated background */
+.global-background-decorations {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Page content sits above the decorations */
+.home-canvas {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: calc(100vh - 25px);
+  background: transparent;
+}
+
+/* Keep sections transparent so decorations remain visible */
+.hero-section,
+.about-section {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+}
+
+/* Navbar and announcement bar stay above everything */
+.announcement-bar {
+  position: relative;
+  z-index: 50;
+}
+
+.main-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* =========================================
+   SMOOTH LIGHT / DARK THEME TRANSITIONS
+========================================= */
+
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Smoothly transition theme-related properties */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition:
+    background-color 350ms ease,
+    color 350ms ease,
+    border-color 350ms ease,
+    box-shadow 350ms ease,
+    fill 350ms ease,
+    stroke 350ms ease !important;
+}
+
+/* Avoid transitions for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition: none !important;
+  }
+}
